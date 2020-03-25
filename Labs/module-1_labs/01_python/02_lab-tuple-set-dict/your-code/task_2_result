@@ -1,0 +1,78 @@
+import random
+sample_list_1 = random.sample(range(101),80)
+print(sample_list_1)
+
+#convert list into set
+set1=set(sample_list_1)
+
+#length stays the same
+print(len(set1))
+
+#random list - sampling without replacement
+population = list(range(101))
+sample_list_2 = []
+i=0
+while i <= 80:
+	a = random.sample(range(101),1)
+	sample_list_2 = sample_list_2 + a
+	i = i+1
+print(sample_list_2)
+
+#convert to set
+set2=set(sample_list_2)
+
+#length varies, as Set only allows unique numbers, without duplicates
+print(len(set2))
+
+#elements in set1 but not in set2
+set3 = set1-set2
+print(set3)
+
+#elements in set2 but not in set1
+set4 = set2-set1
+print(set4)
+
+#intersection of set1 and set2
+set5 = set1 & set2
+print(set5)
+
+#test relationship between the different sets
+print(len(set1)+len(set2)-len(set5) == len(set3)+len(set4)+len(set5))
+
+#creating a new empty set // QUESTION: How did the others do? 
+set6=set()
+set6.update(set3)
+set6.update(set5)
+print(set6)
+
+#check set1 and set6 - equal?
+print(set6 == set1)
+
+#check if set1 contains set2
+print(set2.issubset(set1))
+
+#check if set1 containts set3
+print(set3.issubset(set1))
+
+# Using the Python Set `union` method, aggregate `set3`, `set4`, and `set5`. Then aggregate `set1` and `set2`. // are they equal?
+print(set3&set4&set5 == set1&set2)
+
+# QUESTION: Using the `pop` method, remove the first element from `set1`?!
+
+#remove every element in the list from set1.
+list_to_remove = [1, 9, 11, 19, 21, 29, 31, 39, 41, 49, 51, 59, 61, 69, 71, 79, 81, 89, 91, 99]
+print(set1)
+
+for i in list_to_remove:
+	if i in set1:
+		set1.remove(i)
+	else:
+		continue
+print(set1)
+
+
+
+
+
+
+

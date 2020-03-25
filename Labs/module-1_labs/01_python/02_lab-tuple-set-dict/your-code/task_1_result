@@ -1,0 +1,38 @@
+tup = ("I",)
+print(type(tup))
+
+tup_list = list(tup)
+new_list = ["r", "o", "n", "h", "a", "c", "k"]
+tup = tup_list + new_list
+tup = tuple(tup)
+print(type(tup))
+
+tup1 = tup[0:4]
+tup2 = tup[-4:]
+print(tup1)
+print(tup2)
+
+tup3 = tup1 + tup2
+print(tup3)
+tup3 == tup
+
+count_1 = len(tup1)
+count_2 = len(tup2)
+count_add = count_1 + count_2
+count_add == len(tup3)
+
+print(tup3.index("h"))
+
+letter = ["a", "b", "c", "d", "e"]
+for i in letter:
+    if i in tup3:
+        print("True")
+    else:
+        print("False")
+
+
+for i in letter:
+	dict={i:tup3.count(i)}
+	print(dict)
+
+
